@@ -51,6 +51,7 @@ module.exports = {
   * Should be a directory with the same name as the feature, e.g. `Accomplishments.feature` the directory should be named `Accomplishments`, the file name is irrelevant. 
   * Should import in any of the keywords you may need to define, e.g. `Given`, `When`, `Then`
   * Should define each step, e.g. `Given`, `When`, `Then` the callback should store the code for the actual tests to be executed by cypress. 
+  * You can also load in any variables you defined in your feature, check out in example above & below. 
   * example file: 
   ```javascript
   import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
