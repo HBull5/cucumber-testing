@@ -39,12 +39,36 @@ module.exports = {
   * Should include a single or combination of `Given`, `When`, `And`, and `Then`.
   * example file: 
   ```
-  
+  Feature: Accomplishments Dashboard
+    
+    Scenario: should showcase error if information is missing
+      Given I go to "https://localhost:3000/accomplishments" 
+      When I click the Submit Accomplishment button 
+      Then I see "Complete the items above to continue" 
   ```
   
 * The JS file
-  * should import in any of the keywords you may need to define, e.g. `Given`, `When`, `Then`
+  * Should be a directory with the same name as the feature, e.g. `Accomplishments.feature` the directory should be named `Accomplishments`, the file name is irrelevant. 
+  * Should import in any of the keywords you may need to define, e.g. `Given`, `When`, `Then`
   * Should define each step, e.g. `Given`, `When`, `Then` the callback should store the code for the actual tests to be executed by cypress. 
   * example file: 
   ```javascript
+  import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
+  
+  Given('I go to {string}', (url) => {
+    cy.visit(url);
+  });
+  
+  When('I click the Submit Accomplishment button', () => {
+    cy.contains('Submit Accomplishment').click(); 
+  });
+  
+  Then('I see {string} error message', (text) => {
+    cy.contains(text).should('be.visible');
+  });
   ```
+  
+## Running Tests 
+
+* Open cypress `npx cypress open` 
+* Run the `feature` file you desire. 
