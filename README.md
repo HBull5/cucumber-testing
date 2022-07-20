@@ -41,7 +41,8 @@ module.exports = {
      * `And` following a `Given` are additional preconditions 
      * `When` is an action 
      * `And` following a `When` are additional actions
-     * `Then` is results
+     * `Then` is results, each `Scenario` should end in a `Then` 
+     * You can continue with as many `When`'s and `Then`'s as necessary from this point onward
   * example file: 
   ```
   Feature: Accomplishments Dashboard
