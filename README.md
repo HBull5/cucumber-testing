@@ -37,6 +37,11 @@ module.exports = {
   * Should include only one `Feature` This is similar to the `describe` block of a test. 
   * Should include as many `Scenario`'s as necesary, this is similar to the `it` block of a test. 
   * Should include a single or combination of `Given`, `When`, `And`, and `Then`.
+     * `Given` is a precondition 
+     * `And` following a `Given` are additional preconditions 
+     * `When` is an action 
+     * `And` following a `When` are additional actions
+     * `Then` is results
   * example file: 
   ```
   Feature: Accomplishments Dashboard
